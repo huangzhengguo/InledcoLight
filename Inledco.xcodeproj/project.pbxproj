@@ -1,0 +1,953 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		59AE5EF8ACE13908FD105563 /* libPods-InledcoTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 588595315B43D0C797274581 /* libPods-InledcoTests.a */; };
+		8F4137E51EE0F14100D3F362 /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F4137E41EE0F14100D3F362 /* libsqlite3.0.tbd */; };
+		8F86A8091ED2CD5B004B5632 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F86A8081ED2CD5B004B5632 /* main.m */; };
+		8F86A80C1ED2CD5B004B5632 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F86A80B1ED2CD5B004B5632 /* AppDelegate.m */; };
+		8F86A8141ED2CD5B004B5632 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8F86A8131ED2CD5B004B5632 /* Assets.xcassets */; };
+		8F86A8171ED2CD5B004B5632 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8F86A8151ED2CD5B004B5632 /* LaunchScreen.storyboard */; };
+		8F86A8221ED2CD5B004B5632 /* InledcoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F86A8211ED2CD5B004B5632 /* InledcoTests.m */; };
+		8F86A82D1ED2CD5B004B5632 /* InledcoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F86A82C1ED2CD5B004B5632 /* InledcoUITests.m */; };
+		8F911F3B1EF8CAAD00A741BF /* libBLEManager.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F911F381EF8CAAD00A741BF /* libBLEManager.a */; };
+		8F911F6A1EF8D5B100A741BF /* BlueToothManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F911F541EF8D5B000A741BF /* BlueToothManager.m */; };
+		8F911F6B1EF8D5B100A741BF /* DatabaseManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F911F571EF8D5B000A741BF /* DatabaseManager.m */; };
+		8F911F6C1EF8D5B100A741BF /* DeviceDataType.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F911F5A1EF8D5B000A741BF /* DeviceDataType.m */; };
+		8F911F6D1EF8D5B100A741BF /* FGLanguageTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F911F5D1EF8D5B000A741BF /* FGLanguageTool.m */; };
+		8F911F6E1EF8D5B100A741BF /* DeviceGroupModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F911F601EF8D5B100A741BF /* DeviceGroupModel.m */; };
+		8F911F6F1EF8D5B100A741BF /* DeviceModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F911F621EF8D5B100A741BF /* DeviceModel.m */; };
+		8F911F701EF8D5B100A741BF /* DeviceParameterModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F911F641EF8D5B100A741BF /* DeviceParameterModel.m */; };
+		8F911F711EF8D5B100A741BF /* ECOPlantParameterModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F911F661EF8D5B100A741BF /* ECOPlantParameterModel.m */; };
+		8F911F721EF8D5B100A741BF /* StringRelatedManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F911F691EF8D5B100A741BF /* StringRelatedManager.m */; };
+		8F911F751EF8F0B000A741BF /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F4137E21EE0F12B00D3F362 /* CoreBluetooth.framework */; };
+		8F9F50791EE55FB400CCDF62 /* DeviceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F9F50781EE55FB400CCDF62 /* DeviceViewController.m */; };
+		8F9F507C1EE55FE400CCDF62 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F9F507B1EE55FE400CCDF62 /* BaseViewController.m */; };
+		CF359CC57815B56154510113 /* libPods-InledcoUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A1325F01843E0A821C3DF413 /* libPods-InledcoUITests.a */; };
+		DB01E11411C1E758386AD9CE /* libPods-Inledco.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BEAED353CD22002795DB323E /* libPods-Inledco.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		8F86A81E1ED2CD5B004B5632 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8F86A7FC1ED2CD5B004B5632 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8F86A8031ED2CD5B004B5632;
+			remoteInfo = Inledco;
+		};
+		8F86A8291ED2CD5B004B5632 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8F86A7FC1ED2CD5B004B5632 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8F86A8031ED2CD5B004B5632;
+			remoteInfo = Inledco;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		4A8AEF1B162140918D91EAEF /* Pods-Inledco.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Inledco.release.xcconfig"; path = "Pods/Target Support Files/Pods-Inledco/Pods-Inledco.release.xcconfig"; sourceTree = "<group>"; };
+		55EB4A23B43BC107BBFFB55F /* Pods-InledcoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InledcoTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-InledcoTests/Pods-InledcoTests.debug.xcconfig"; sourceTree = "<group>"; };
+		588595315B43D0C797274581 /* libPods-InledcoTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-InledcoTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		80994BA060B6A07A2A63351F /* Pods-InledcoUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InledcoUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-InledcoUITests/Pods-InledcoUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		8F4137E21EE0F12B00D3F362 /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
+		8F4137E41EE0F14100D3F362 /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
+		8F86A8041ED2CD5B004B5632 /* Inledco.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Inledco.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8F86A8081ED2CD5B004B5632 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		8F86A80A1ED2CD5B004B5632 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		8F86A80B1ED2CD5B004B5632 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		8F86A8131ED2CD5B004B5632 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8F86A8161ED2CD5B004B5632 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		8F86A8181ED2CD5B004B5632 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8F86A81D1ED2CD5B004B5632 /* InledcoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InledcoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8F86A8211ED2CD5B004B5632 /* InledcoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InledcoTests.m; sourceTree = "<group>"; };
+		8F86A8231ED2CD5B004B5632 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8F86A8281ED2CD5B004B5632 /* InledcoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InledcoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8F86A82C1ED2CD5B004B5632 /* InledcoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InledcoUITests.m; sourceTree = "<group>"; };
+		8F86A82E1ED2CD5B004B5632 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8F911F351EF8CAAD00A741BF /* BLEManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLEManager.h; sourceTree = "<group>"; };
+		8F911F361EF8CAAD00A741BF /* DeviceInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeviceInfo.h; sourceTree = "<group>"; };
+		8F911F371EF8CAAD00A741BF /* DeviceInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeviceInfo.m; sourceTree = "<group>"; };
+		8F911F381EF8CAAD00A741BF /* libBLEManager.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libBLEManager.a; sourceTree = "<group>"; };
+		8F911F391EF8CAAD00A741BF /* oad.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = oad.h; sourceTree = "<group>"; };
+		8F911F531EF8D5B000A741BF /* BlueToothManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlueToothManager.h; sourceTree = "<group>"; };
+		8F911F541EF8D5B000A741BF /* BlueToothManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlueToothManager.m; sourceTree = "<group>"; };
+		8F911F561EF8D5B000A741BF /* DatabaseManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DatabaseManager.h; sourceTree = "<group>"; };
+		8F911F571EF8D5B000A741BF /* DatabaseManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DatabaseManager.m; sourceTree = "<group>"; };
+		8F911F591EF8D5B000A741BF /* DeviceDataType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeviceDataType.h; sourceTree = "<group>"; };
+		8F911F5A1EF8D5B000A741BF /* DeviceDataType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeviceDataType.m; sourceTree = "<group>"; };
+		8F911F5C1EF8D5B000A741BF /* FGLanguageTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FGLanguageTool.h; sourceTree = "<group>"; };
+		8F911F5D1EF8D5B000A741BF /* FGLanguageTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FGLanguageTool.m; sourceTree = "<group>"; };
+		8F911F5F1EF8D5B000A741BF /* DeviceGroupModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeviceGroupModel.h; sourceTree = "<group>"; };
+		8F911F601EF8D5B100A741BF /* DeviceGroupModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeviceGroupModel.m; sourceTree = "<group>"; };
+		8F911F611EF8D5B100A741BF /* DeviceModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeviceModel.h; sourceTree = "<group>"; };
+		8F911F621EF8D5B100A741BF /* DeviceModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeviceModel.m; sourceTree = "<group>"; };
+		8F911F631EF8D5B100A741BF /* DeviceParameterModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeviceParameterModel.h; sourceTree = "<group>"; };
+		8F911F641EF8D5B100A741BF /* DeviceParameterModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeviceParameterModel.m; sourceTree = "<group>"; };
+		8F911F651EF8D5B100A741BF /* ECOPlantParameterModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECOPlantParameterModel.h; sourceTree = "<group>"; };
+		8F911F661EF8D5B100A741BF /* ECOPlantParameterModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECOPlantParameterModel.m; sourceTree = "<group>"; };
+		8F911F681EF8D5B100A741BF /* StringRelatedManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StringRelatedManager.h; sourceTree = "<group>"; };
+		8F911F691EF8D5B100A741BF /* StringRelatedManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StringRelatedManager.m; sourceTree = "<group>"; };
+		8F911F731EF8ECB900A741BF /* GlobalHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GlobalHeader.h; sourceTree = "<group>"; };
+		8F911F741EF8ED6D00A741BF /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		8F9F50771EE55FB400CCDF62 /* DeviceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeviceViewController.h; sourceTree = "<group>"; };
+		8F9F50781EE55FB400CCDF62 /* DeviceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeviceViewController.m; sourceTree = "<group>"; };
+		8F9F507A1EE55FE400CCDF62 /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
+		8F9F507B1EE55FE400CCDF62 /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
+		A1325F01843E0A821C3DF413 /* libPods-InledcoUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-InledcoUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A2502DECD516A78CF6647E80 /* Pods-Inledco.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Inledco.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Inledco/Pods-Inledco.debug.xcconfig"; sourceTree = "<group>"; };
+		BEAED353CD22002795DB323E /* libPods-Inledco.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Inledco.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C38AA478C22113A7E3E43315 /* Pods-InledcoUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InledcoUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-InledcoUITests/Pods-InledcoUITests.release.xcconfig"; sourceTree = "<group>"; };
+		E00D945A9AA9AA171B02C689 /* Pods-InledcoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InledcoTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-InledcoTests/Pods-InledcoTests.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8F86A8011ED2CD5B004B5632 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8F911F751EF8F0B000A741BF /* CoreBluetooth.framework in Frameworks */,
+				8F4137E51EE0F14100D3F362 /* libsqlite3.0.tbd in Frameworks */,
+				DB01E11411C1E758386AD9CE /* libPods-Inledco.a in Frameworks */,
+				8F911F3B1EF8CAAD00A741BF /* libBLEManager.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8F86A81A1ED2CD5B004B5632 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				59AE5EF8ACE13908FD105563 /* libPods-InledcoTests.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8F86A8251ED2CD5B004B5632 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CF359CC57815B56154510113 /* libPods-InledcoUITests.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		8F4137E11EE0F12B00D3F362 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8F4137E41EE0F14100D3F362 /* libsqlite3.0.tbd */,
+				8F4137E21EE0F12B00D3F362 /* CoreBluetooth.framework */,
+				BEAED353CD22002795DB323E /* libPods-Inledco.a */,
+				588595315B43D0C797274581 /* libPods-InledcoTests.a */,
+				A1325F01843E0A821C3DF413 /* libPods-InledcoUITests.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8F4137E61EE0F57700D3F362 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				8F911F521EF8D5B000A741BF /* BleManager */,
+				8F911F551EF8D5B000A741BF /* DatabaseManager */,
+				8F911F581EF8D5B000A741BF /* DeviceDataType */,
+				8F911F5B1EF8D5B000A741BF /* LanguageManager */,
+				8F911F5E1EF8D5B000A741BF /* Models */,
+				8F911F671EF8D5B100A741BF /* StringRelatedManager */,
+				8F4137E71EE0F6FA00D3F362 /* BleSDK */,
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
+		8F4137E71EE0F6FA00D3F362 /* BleSDK */ = {
+			isa = PBXGroup;
+			children = (
+				8F911F351EF8CAAD00A741BF /* BLEManager.h */,
+				8F911F361EF8CAAD00A741BF /* DeviceInfo.h */,
+				8F911F371EF8CAAD00A741BF /* DeviceInfo.m */,
+				8F911F381EF8CAAD00A741BF /* libBLEManager.a */,
+				8F911F391EF8CAAD00A741BF /* oad.h */,
+			);
+			path = BleSDK;
+			sourceTree = "<group>";
+		};
+		8F86A7FB1ED2CD5B004B5632 = {
+			isa = PBXGroup;
+			children = (
+				8F86A8061ED2CD5B004B5632 /* Inledco */,
+				8F86A8201ED2CD5B004B5632 /* InledcoTests */,
+				8F86A82B1ED2CD5B004B5632 /* InledcoUITests */,
+				8F86A8051ED2CD5B004B5632 /* Products */,
+				8F4137E11EE0F12B00D3F362 /* Frameworks */,
+				A7213E851535D015A8F4BF6D /* Pods */,
+			);
+			sourceTree = "<group>";
+		};
+		8F86A8051ED2CD5B004B5632 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8F86A8041ED2CD5B004B5632 /* Inledco.app */,
+				8F86A81D1ED2CD5B004B5632 /* InledcoTests.xctest */,
+				8F86A8281ED2CD5B004B5632 /* InledcoUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8F86A8061ED2CD5B004B5632 /* Inledco */ = {
+			isa = PBXGroup;
+			children = (
+				8F86A80A1ED2CD5B004B5632 /* AppDelegate.h */,
+				8F86A80B1ED2CD5B004B5632 /* AppDelegate.m */,
+				8F86A8131ED2CD5B004B5632 /* Assets.xcassets */,
+				8F86A8151ED2CD5B004B5632 /* LaunchScreen.storyboard */,
+				8F86A8181ED2CD5B004B5632 /* Info.plist */,
+				8F911F731EF8ECB900A741BF /* GlobalHeader.h */,
+				8F911F741EF8ED6D00A741BF /* PrefixHeader.pch */,
+				8F9F506D1EE55EF600CCDF62 /* BaseClass */,
+				8F9F506E1EE55EF600CCDF62 /* CodeClass */,
+				8F4137E61EE0F57700D3F362 /* Tools */,
+				8F86A8071ED2CD5B004B5632 /* Supporting Files */,
+			);
+			path = Inledco;
+			sourceTree = "<group>";
+		};
+		8F86A8071ED2CD5B004B5632 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				8F86A8081ED2CD5B004B5632 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		8F86A8201ED2CD5B004B5632 /* InledcoTests */ = {
+			isa = PBXGroup;
+			children = (
+				8F86A8211ED2CD5B004B5632 /* InledcoTests.m */,
+				8F86A8231ED2CD5B004B5632 /* Info.plist */,
+			);
+			path = InledcoTests;
+			sourceTree = "<group>";
+		};
+		8F86A82B1ED2CD5B004B5632 /* InledcoUITests */ = {
+			isa = PBXGroup;
+			children = (
+				8F86A82C1ED2CD5B004B5632 /* InledcoUITests.m */,
+				8F86A82E1ED2CD5B004B5632 /* Info.plist */,
+			);
+			path = InledcoUITests;
+			sourceTree = "<group>";
+		};
+		8F911F521EF8D5B000A741BF /* BleManager */ = {
+			isa = PBXGroup;
+			children = (
+				8F911F531EF8D5B000A741BF /* BlueToothManager.h */,
+				8F911F541EF8D5B000A741BF /* BlueToothManager.m */,
+			);
+			path = BleManager;
+			sourceTree = "<group>";
+		};
+		8F911F551EF8D5B000A741BF /* DatabaseManager */ = {
+			isa = PBXGroup;
+			children = (
+				8F911F561EF8D5B000A741BF /* DatabaseManager.h */,
+				8F911F571EF8D5B000A741BF /* DatabaseManager.m */,
+			);
+			path = DatabaseManager;
+			sourceTree = "<group>";
+		};
+		8F911F581EF8D5B000A741BF /* DeviceDataType */ = {
+			isa = PBXGroup;
+			children = (
+				8F911F591EF8D5B000A741BF /* DeviceDataType.h */,
+				8F911F5A1EF8D5B000A741BF /* DeviceDataType.m */,
+			);
+			path = DeviceDataType;
+			sourceTree = "<group>";
+		};
+		8F911F5B1EF8D5B000A741BF /* LanguageManager */ = {
+			isa = PBXGroup;
+			children = (
+				8F911F5C1EF8D5B000A741BF /* FGLanguageTool.h */,
+				8F911F5D1EF8D5B000A741BF /* FGLanguageTool.m */,
+			);
+			path = LanguageManager;
+			sourceTree = "<group>";
+		};
+		8F911F5E1EF8D5B000A741BF /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				8F911F5F1EF8D5B000A741BF /* DeviceGroupModel.h */,
+				8F911F601EF8D5B100A741BF /* DeviceGroupModel.m */,
+				8F911F611EF8D5B100A741BF /* DeviceModel.h */,
+				8F911F621EF8D5B100A741BF /* DeviceModel.m */,
+				8F911F631EF8D5B100A741BF /* DeviceParameterModel.h */,
+				8F911F641EF8D5B100A741BF /* DeviceParameterModel.m */,
+				8F911F651EF8D5B100A741BF /* ECOPlantParameterModel.h */,
+				8F911F661EF8D5B100A741BF /* ECOPlantParameterModel.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		8F911F671EF8D5B100A741BF /* StringRelatedManager */ = {
+			isa = PBXGroup;
+			children = (
+				8F911F681EF8D5B100A741BF /* StringRelatedManager.h */,
+				8F911F691EF8D5B100A741BF /* StringRelatedManager.m */,
+			);
+			path = StringRelatedManager;
+			sourceTree = "<group>";
+		};
+		8F9F506D1EE55EF600CCDF62 /* BaseClass */ = {
+			isa = PBXGroup;
+			children = (
+				8F9F507A1EE55FE400CCDF62 /* BaseViewController.h */,
+				8F9F507B1EE55FE400CCDF62 /* BaseViewController.m */,
+			);
+			path = BaseClass;
+			sourceTree = "<group>";
+		};
+		8F9F506E1EE55EF600CCDF62 /* CodeClass */ = {
+			isa = PBXGroup;
+			children = (
+				8F9F50731EE55F7500CCDF62 /* ScanDevice */,
+				8F9F506F1EE55F1200CCDF62 /* Device */,
+			);
+			path = CodeClass;
+			sourceTree = "<group>";
+		};
+		8F9F506F1EE55F1200CCDF62 /* Device */ = {
+			isa = PBXGroup;
+			children = (
+				8F9F50701EE55F5500CCDF62 /* Controller */,
+				8F9F50711EE55F5500CCDF62 /* Model */,
+				8F9F50721EE55F5500CCDF62 /* View */,
+			);
+			path = Device;
+			sourceTree = "<group>";
+		};
+		8F9F50701EE55F5500CCDF62 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				8F9F50771EE55FB400CCDF62 /* DeviceViewController.h */,
+				8F9F50781EE55FB400CCDF62 /* DeviceViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		8F9F50711EE55F5500CCDF62 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		8F9F50721EE55F5500CCDF62 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		8F9F50731EE55F7500CCDF62 /* ScanDevice */ = {
+			isa = PBXGroup;
+			children = (
+				8F9F50741EE55F7500CCDF62 /* Controller */,
+				8F9F50751EE55F7500CCDF62 /* Model */,
+				8F9F50761EE55F7500CCDF62 /* View */,
+			);
+			path = ScanDevice;
+			sourceTree = "<group>";
+		};
+		8F9F50741EE55F7500CCDF62 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		8F9F50751EE55F7500CCDF62 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		8F9F50761EE55F7500CCDF62 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A7213E851535D015A8F4BF6D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A2502DECD516A78CF6647E80 /* Pods-Inledco.debug.xcconfig */,
+				4A8AEF1B162140918D91EAEF /* Pods-Inledco.release.xcconfig */,
+				55EB4A23B43BC107BBFFB55F /* Pods-InledcoTests.debug.xcconfig */,
+				E00D945A9AA9AA171B02C689 /* Pods-InledcoTests.release.xcconfig */,
+				80994BA060B6A07A2A63351F /* Pods-InledcoUITests.debug.xcconfig */,
+				C38AA478C22113A7E3E43315 /* Pods-InledcoUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8F86A8031ED2CD5B004B5632 /* Inledco */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8F86A8311ED2CD5B004B5632 /* Build configuration list for PBXNativeTarget "Inledco" */;
+			buildPhases = (
+				3BF0D17E7B5C9846D9E8274B /* [CP] Check Pods Manifest.lock */,
+				8F86A8001ED2CD5B004B5632 /* Sources */,
+				8F86A8011ED2CD5B004B5632 /* Frameworks */,
+				8F86A8021ED2CD5B004B5632 /* Resources */,
+				541F5C09AEC5EECE48974532 /* [CP] Embed Pods Frameworks */,
+				7C98124E200F50CD52F55372 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Inledco;
+			productName = Inledco;
+			productReference = 8F86A8041ED2CD5B004B5632 /* Inledco.app */;
+			productType = "com.apple.product-type.application";
+		};
+		8F86A81C1ED2CD5B004B5632 /* InledcoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8F86A8341ED2CD5B004B5632 /* Build configuration list for PBXNativeTarget "InledcoTests" */;
+			buildPhases = (
+				12BA1E55DE3630A1269B219F /* [CP] Check Pods Manifest.lock */,
+				8F86A8191ED2CD5B004B5632 /* Sources */,
+				8F86A81A1ED2CD5B004B5632 /* Frameworks */,
+				8F86A81B1ED2CD5B004B5632 /* Resources */,
+				E40CB10A458B60A0EAA0DCA0 /* [CP] Embed Pods Frameworks */,
+				9312352D3BB7EFA8267E12A9 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8F86A81F1ED2CD5B004B5632 /* PBXTargetDependency */,
+			);
+			name = InledcoTests;
+			productName = InledcoTests;
+			productReference = 8F86A81D1ED2CD5B004B5632 /* InledcoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		8F86A8271ED2CD5B004B5632 /* InledcoUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8F86A8371ED2CD5B004B5632 /* Build configuration list for PBXNativeTarget "InledcoUITests" */;
+			buildPhases = (
+				2F8BF991135C4E3A75096DD8 /* [CP] Check Pods Manifest.lock */,
+				8F86A8241ED2CD5B004B5632 /* Sources */,
+				8F86A8251ED2CD5B004B5632 /* Frameworks */,
+				8F86A8261ED2CD5B004B5632 /* Resources */,
+				576A977B5E3FCEBB3954E97A /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8F86A82A1ED2CD5B004B5632 /* PBXTargetDependency */,
+			);
+			name = InledcoUITests;
+			productName = InledcoUITests;
+			productReference = 8F86A8281ED2CD5B004B5632 /* InledcoUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		8F86A7FC1ED2CD5B004B5632 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = "huang zhengguo";
+				TargetAttributes = {
+					8F86A8031ED2CD5B004B5632 = {
+						CreatedOnToolsVersion = 8.3;
+						DevelopmentTeam = TP2XCH35TP;
+						ProvisioningStyle = Automatic;
+					};
+					8F86A81C1ED2CD5B004B5632 = {
+						CreatedOnToolsVersion = 8.3;
+						DevelopmentTeam = TP2XCH35TP;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 8F86A8031ED2CD5B004B5632;
+					};
+					8F86A8271ED2CD5B004B5632 = {
+						CreatedOnToolsVersion = 8.3;
+						DevelopmentTeam = TP2XCH35TP;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 8F86A8031ED2CD5B004B5632;
+					};
+				};
+			};
+			buildConfigurationList = 8F86A7FF1ED2CD5B004B5632 /* Build configuration list for PBXProject "Inledco" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 8F86A7FB1ED2CD5B004B5632;
+			productRefGroup = 8F86A8051ED2CD5B004B5632 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8F86A8031ED2CD5B004B5632 /* Inledco */,
+				8F86A81C1ED2CD5B004B5632 /* InledcoTests */,
+				8F86A8271ED2CD5B004B5632 /* InledcoUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8F86A8021ED2CD5B004B5632 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8F86A8171ED2CD5B004B5632 /* LaunchScreen.storyboard in Resources */,
+				8F86A8141ED2CD5B004B5632 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8F86A81B1ED2CD5B004B5632 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8F86A8261ED2CD5B004B5632 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		12BA1E55DE3630A1269B219F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		2F8BF991135C4E3A75096DD8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		3BF0D17E7B5C9846D9E8274B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		541F5C09AEC5EECE48974532 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Inledco/Pods-Inledco-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		576A977B5E3FCEBB3954E97A /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-InledcoUITests/Pods-InledcoUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7C98124E200F50CD52F55372 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Inledco/Pods-Inledco-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9312352D3BB7EFA8267E12A9 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-InledcoTests/Pods-InledcoTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E40CB10A458B60A0EAA0DCA0 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-InledcoTests/Pods-InledcoTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8F86A8001ED2CD5B004B5632 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8F911F6F1EF8D5B100A741BF /* DeviceModel.m in Sources */,
+				8F9F50791EE55FB400CCDF62 /* DeviceViewController.m in Sources */,
+				8F911F6B1EF8D5B100A741BF /* DatabaseManager.m in Sources */,
+				8F911F711EF8D5B100A741BF /* ECOPlantParameterModel.m in Sources */,
+				8F911F721EF8D5B100A741BF /* StringRelatedManager.m in Sources */,
+				8F9F507C1EE55FE400CCDF62 /* BaseViewController.m in Sources */,
+				8F911F6D1EF8D5B100A741BF /* FGLanguageTool.m in Sources */,
+				8F86A80C1ED2CD5B004B5632 /* AppDelegate.m in Sources */,
+				8F911F6A1EF8D5B100A741BF /* BlueToothManager.m in Sources */,
+				8F86A8091ED2CD5B004B5632 /* main.m in Sources */,
+				8F911F6C1EF8D5B100A741BF /* DeviceDataType.m in Sources */,
+				8F911F6E1EF8D5B100A741BF /* DeviceGroupModel.m in Sources */,
+				8F911F701EF8D5B100A741BF /* DeviceParameterModel.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8F86A8191ED2CD5B004B5632 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8F86A8221ED2CD5B004B5632 /* InledcoTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8F86A8241ED2CD5B004B5632 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8F86A82D1ED2CD5B004B5632 /* InledcoUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		8F86A81F1ED2CD5B004B5632 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8F86A8031ED2CD5B004B5632 /* Inledco */;
+			targetProxy = 8F86A81E1ED2CD5B004B5632 /* PBXContainerItemProxy */;
+		};
+		8F86A82A1ED2CD5B004B5632 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8F86A8031ED2CD5B004B5632 /* Inledco */;
+			targetProxy = 8F86A8291ED2CD5B004B5632 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		8F86A8151ED2CD5B004B5632 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8F86A8161ED2CD5B004B5632 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		8F86A82F1ED2CD5B004B5632 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		8F86A8301ED2CD5B004B5632 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		8F86A8321ED2CD5B004B5632 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A2502DECD516A78CF6647E80 /* Pods-Inledco.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = TP2XCH35TP;
+				ENABLE_BITCODE = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/Inledco/PrefixHeader.pch";
+				INFOPLIST_FILE = Inledco/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Inledco/Tools/BleSDK",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.ledinpro.Inledco;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		8F86A8331ED2CD5B004B5632 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4A8AEF1B162140918D91EAEF /* Pods-Inledco.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = TP2XCH35TP;
+				ENABLE_BITCODE = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/Inledco/PrefixHeader.pch";
+				INFOPLIST_FILE = Inledco/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Inledco/Tools/BleSDK",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.ledinpro.Inledco;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		8F86A8351ED2CD5B004B5632 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 55EB4A23B43BC107BBFFB55F /* Pods-InledcoTests.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = TP2XCH35TP;
+				INFOPLIST_FILE = InledcoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ledinpro.InledcoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Inledco.app/Inledco";
+			};
+			name = Debug;
+		};
+		8F86A8361ED2CD5B004B5632 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E00D945A9AA9AA171B02C689 /* Pods-InledcoTests.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = TP2XCH35TP;
+				INFOPLIST_FILE = InledcoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ledinpro.InledcoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Inledco.app/Inledco";
+			};
+			name = Release;
+		};
+		8F86A8381ED2CD5B004B5632 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 80994BA060B6A07A2A63351F /* Pods-InledcoUITests.debug.xcconfig */;
+			buildSettings = {
+				DEVELOPMENT_TEAM = TP2XCH35TP;
+				INFOPLIST_FILE = InledcoUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ledinpro.InledcoUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = Inledco;
+			};
+			name = Debug;
+		};
+		8F86A8391ED2CD5B004B5632 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C38AA478C22113A7E3E43315 /* Pods-InledcoUITests.release.xcconfig */;
+			buildSettings = {
+				DEVELOPMENT_TEAM = TP2XCH35TP;
+				INFOPLIST_FILE = InledcoUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ledinpro.InledcoUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = Inledco;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		8F86A7FF1ED2CD5B004B5632 /* Build configuration list for PBXProject "Inledco" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8F86A82F1ED2CD5B004B5632 /* Debug */,
+				8F86A8301ED2CD5B004B5632 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8F86A8311ED2CD5B004B5632 /* Build configuration list for PBXNativeTarget "Inledco" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8F86A8321ED2CD5B004B5632 /* Debug */,
+				8F86A8331ED2CD5B004B5632 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8F86A8341ED2CD5B004B5632 /* Build configuration list for PBXNativeTarget "InledcoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8F86A8351ED2CD5B004B5632 /* Debug */,
+				8F86A8361ED2CD5B004B5632 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8F86A8371ED2CD5B004B5632 /* Build configuration list for PBXNativeTarget "InledcoUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8F86A8381ED2CD5B004B5632 /* Debug */,
+				8F86A8391ED2CD5B004B5632 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 8F86A7FC1ED2CD5B004B5632 /* Project object */;
+}
