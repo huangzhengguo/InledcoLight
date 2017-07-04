@@ -7,10 +7,12 @@
 //
 
 #import "BlueToothManager.h"
+#import "BLEManager.h"
+#import "DeviceInfo.h"
 #import "DatabaseManager.h"
 #import "StringRelatedManager.h"
 
-// 发起连接设备的时长，超过该市场则视为扫描结束
+// 发起连接设备的时长，超过该时长则视为扫描结束
 #define CONNECTIONINTERVAL 2.0f
 // 尝试连接的最大次数，超过此数则视为连接失败
 #define MAXCONNECTIONCOUNT 3

@@ -12,6 +12,22 @@
 // Include any system framework and library headers here that should be included in all compilation units.
 // You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
 
+// 全局宏定义文件
 #import "GlobalHeader.h"
+
+// 蓝牙SDK头文件
+#import "BLEManager.h"
+
+// 蓝牙管理封装文件
+#import "BlueToothManager.h"
+
+// 语言管理工具
+#import "FGLanguageTool.h"
+
+// 设备模型头文件
+#import "DeviceModel.h"
+
+// 数据库管理头文件
+#import "DatabaseManager.h"
 
 #endif /* PrefixHeader_pch */

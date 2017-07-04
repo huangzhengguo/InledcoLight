@@ -7,8 +7,13 @@
 //
 
 #import "DeviceViewController.h"
+#import "ScanViewController.h"
+#import "DeviceTableViewCell.h"
 
-@interface DeviceViewController ()
+@interface DeviceViewController ()<UITableViewDelegate,UITableViewDataSource>
+
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
+
 
 @end
 
@@ -17,7 +22,60 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    //self.view.backgroundColor = [UIColor whiteColor];
+    
+    self.tableView.delegate = self;
+    self.tableView.dataSource = self;
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
+    [self.tableView registerNib:[UINib nibWithNibName:@"DeviceTableViewCell" bundle:nil] forCellReuseIdentifier:@"DeviceTableViewCell"];
+    
+    // 设置视图
+    [self setViews];
+    [self setConstraints];
+}
+
+- (void)setViews{
+    [self.navigationController.navigationBar setBarTintColor:[UIColor colorWithRed:15.0f / 255.0f green:91.0f / 255.0f blue:20.0f / 255.0f alpha:1.0f]];
+    self.navigationItem.title = @"Inledco";
+    [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor whiteColor]}];
+    UIBarButtonItem *addBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(scanDeviceAction:)];
+    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
+    self.navigationItem.rightBarButtonItem = addBarButtonItem;
+}
+
+- (void)setConstraints{
+    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_tableView attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeTop multiplier:1.0f constant:0]];
+    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_tableView attribute:NSLayoutAttributeRight relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeRight multiplier:1.0f constant:0]];
+    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_tableView attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeBottom multiplier:1.0f constant:0]];
+    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_tableView attribute:NSLayoutAttributeLeft relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeLeft multiplier:1.0f constant:0]];
+}
+
+- (void)scanDeviceAction:(UIBarButtonItem *)barButtonItem{
+    ScanViewController *scanViewController = [[ScanViewController alloc] init];
+    
+    scanViewController.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:scanViewController animated:YES];
+}
+
+#pragma mark --- tableview代理方法
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+    return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return 10;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    DeviceTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"DeviceTableViewCell" forIndexPath:indexPath];
+
+    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    
+    return cell;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return 80.0;
 }
 
 - (void)didReceiveMemoryWarning {

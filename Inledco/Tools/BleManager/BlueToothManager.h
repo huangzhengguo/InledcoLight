@@ -6,8 +6,9 @@
 //  Copyright © 2017年 huang zhengguo. All rights reserved.
 //
 
+// 版本信息2017.06.22确认
+
 #import <Foundation/Foundation.h>
-#import "BLEManager.h"
 #import "DeviceParameterModel.h"
 #import "ECOPlantParameterModel.h"
 

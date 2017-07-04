@@ -16,7 +16,6 @@
 		8F86A8221ED2CD5B004B5632 /* InledcoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F86A8211ED2CD5B004B5632 /* InledcoTests.m */; };
 		8F86A82D1ED2CD5B004B5632 /* InledcoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F86A82C1ED2CD5B004B5632 /* InledcoUITests.m */; };
 		8F911F3B1EF8CAAD00A741BF /* libBLEManager.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F911F381EF8CAAD00A741BF /* libBLEManager.a */; };
-		8F911F6A1EF8D5B100A741BF /* BlueToothManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F911F541EF8D5B000A741BF /* BlueToothManager.m */; };
 		8F911F6B1EF8D5B100A741BF /* DatabaseManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F911F571EF8D5B000A741BF /* DatabaseManager.m */; };
 		8F911F6C1EF8D5B100A741BF /* DeviceDataType.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F911F5A1EF8D5B000A741BF /* DeviceDataType.m */; };
 		8F911F6D1EF8D5B100A741BF /* FGLanguageTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F911F5D1EF8D5B000A741BF /* FGLanguageTool.m */; };
@@ -26,6 +25,17 @@
 		8F911F711EF8D5B100A741BF /* ECOPlantParameterModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F911F661EF8D5B100A741BF /* ECOPlantParameterModel.m */; };
 		8F911F721EF8D5B100A741BF /* StringRelatedManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F911F691EF8D5B100A741BF /* StringRelatedManager.m */; };
 		8F911F751EF8F0B000A741BF /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F4137E21EE0F12B00D3F362 /* CoreBluetooth.framework */; };
+		8F9DB9C81F0B6E6F00306F53 /* LED.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F9DB9C71F0B6E6F00306F53 /* LED.png */; };
+		8F9DB9CC1F0B7AC500306F53 /* ScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F9DB9CA1F0B7AC500306F53 /* ScanViewController.m */; };
+		8F9DB9CD1F0B7AC500306F53 /* ScanViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8F9DB9CB1F0B7AC500306F53 /* ScanViewController.xib */; };
+		8F9DB9D21F0B7E0B00306F53 /* DeviceScanCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F9DB9D11F0B7E0B00306F53 /* DeviceScanCell.m */; };
+		8F9DB9D61F0B7F3000306F53 /* BlueToothManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F9DB9D51F0B7F3000306F53 /* BlueToothManager.m */; };
+		8F9DB9D91F0B847700306F53 /* check.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F9DB9D71F0B847700306F53 /* check.png */; };
+		8F9DB9DA1F0B847700306F53 /* uncheck.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F9DB9D81F0B847700306F53 /* uncheck.png */; };
+		8F9DB9DC1F0B84C400306F53 /* save.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F9DB9DB1F0B84C400306F53 /* save.png */; };
+		8F9DB9E61F0B8F5800306F53 /* DeviceTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F9DB9E41F0B8F5800306F53 /* DeviceTableViewCell.m */; };
+		8F9DB9E71F0B8F5800306F53 /* DeviceTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8F9DB9E51F0B8F5800306F53 /* DeviceTableViewCell.xib */; };
+		8F9DB9E91F0BA6E800306F53 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8F9DB9E81F0BA6E800306F53 /* Main.storyboard */; };
 		8F9F50791EE55FB400CCDF62 /* DeviceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F9F50781EE55FB400CCDF62 /* DeviceViewController.m */; };
 		8F9F507C1EE55FE400CCDF62 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F9F507B1EE55FE400CCDF62 /* BaseViewController.m */; };
 		CF359CC57815B56154510113 /* libPods-InledcoUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A1325F01843E0A821C3DF413 /* libPods-InledcoUITests.a */; };
@@ -74,8 +84,6 @@
 		8F911F371EF8CAAD00A741BF /* DeviceInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeviceInfo.m; sourceTree = "<group>"; };
 		8F911F381EF8CAAD00A741BF /* libBLEManager.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libBLEManager.a; sourceTree = "<group>"; };
 		8F911F391EF8CAAD00A741BF /* oad.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = oad.h; sourceTree = "<group>"; };
-		8F911F531EF8D5B000A741BF /* BlueToothManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlueToothManager.h; sourceTree = "<group>"; };
-		8F911F541EF8D5B000A741BF /* BlueToothManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlueToothManager.m; sourceTree = "<group>"; };
 		8F911F561EF8D5B000A741BF /* DatabaseManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DatabaseManager.h; sourceTree = "<group>"; };
 		8F911F571EF8D5B000A741BF /* DatabaseManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DatabaseManager.m; sourceTree = "<group>"; };
 		8F911F591EF8D5B000A741BF /* DeviceDataType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeviceDataType.h; sourceTree = "<group>"; };
@@ -94,6 +102,21 @@
 		8F911F691EF8D5B100A741BF /* StringRelatedManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StringRelatedManager.m; sourceTree = "<group>"; };
 		8F911F731EF8ECB900A741BF /* GlobalHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GlobalHeader.h; sourceTree = "<group>"; };
 		8F911F741EF8ED6D00A741BF /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		8F9DB9C71F0B6E6F00306F53 /* LED.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LED.png; sourceTree = "<group>"; };
+		8F9DB9C91F0B7AC500306F53 /* ScanViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScanViewController.h; sourceTree = "<group>"; };
+		8F9DB9CA1F0B7AC500306F53 /* ScanViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScanViewController.m; sourceTree = "<group>"; };
+		8F9DB9CB1F0B7AC500306F53 /* ScanViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ScanViewController.xib; sourceTree = "<group>"; };
+		8F9DB9D01F0B7E0B00306F53 /* DeviceScanCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeviceScanCell.h; sourceTree = "<group>"; };
+		8F9DB9D11F0B7E0B00306F53 /* DeviceScanCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeviceScanCell.m; sourceTree = "<group>"; };
+		8F9DB9D41F0B7F3000306F53 /* BlueToothManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlueToothManager.h; sourceTree = "<group>"; };
+		8F9DB9D51F0B7F3000306F53 /* BlueToothManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlueToothManager.m; sourceTree = "<group>"; };
+		8F9DB9D71F0B847700306F53 /* check.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = check.png; sourceTree = "<group>"; };
+		8F9DB9D81F0B847700306F53 /* uncheck.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = uncheck.png; sourceTree = "<group>"; };
+		8F9DB9DB1F0B84C400306F53 /* save.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = save.png; sourceTree = "<group>"; };
+		8F9DB9E31F0B8F5800306F53 /* DeviceTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeviceTableViewCell.h; sourceTree = "<group>"; };
+		8F9DB9E41F0B8F5800306F53 /* DeviceTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeviceTableViewCell.m; sourceTree = "<group>"; };
+		8F9DB9E51F0B8F5800306F53 /* DeviceTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DeviceTableViewCell.xib; sourceTree = "<group>"; };
+		8F9DB9E81F0BA6E800306F53 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		8F9F50771EE55FB400CCDF62 /* DeviceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeviceViewController.h; sourceTree = "<group>"; };
 		8F9F50781EE55FB400CCDF62 /* DeviceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeviceViewController.m; sourceTree = "<group>"; };
 		8F9F507A1EE55FE400CCDF62 /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
@@ -151,7 +174,7 @@
 		8F4137E61EE0F57700D3F362 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
-				8F911F521EF8D5B000A741BF /* BleManager */,
+				8F9DB9D31F0B7F3000306F53 /* BleManager */,
 				8F911F551EF8D5B000A741BF /* DatabaseManager */,
 				8F911F581EF8D5B000A741BF /* DeviceDataType */,
 				8F911F5B1EF8D5B000A741BF /* LanguageManager */,
@@ -203,12 +226,14 @@
 				8F86A80B1ED2CD5B004B5632 /* AppDelegate.m */,
 				8F86A8131ED2CD5B004B5632 /* Assets.xcassets */,
 				8F86A8151ED2CD5B004B5632 /* LaunchScreen.storyboard */,
+				8F9DB9E81F0BA6E800306F53 /* Main.storyboard */,
 				8F86A8181ED2CD5B004B5632 /* Info.plist */,
 				8F911F731EF8ECB900A741BF /* GlobalHeader.h */,
 				8F911F741EF8ED6D00A741BF /* PrefixHeader.pch */,
 				8F9F506D1EE55EF600CCDF62 /* BaseClass */,
 				8F9F506E1EE55EF600CCDF62 /* CodeClass */,
 				8F4137E61EE0F57700D3F362 /* Tools */,
+				8F9DB9C61F0B6E3A00306F53 /* Images */,
 				8F86A8071ED2CD5B004B5632 /* Supporting Files */,
 			);
 			path = Inledco;
@@ -238,15 +263,6 @@
 				8F86A82E1ED2CD5B004B5632 /* Info.plist */,
 			);
 			path = InledcoUITests;
-			sourceTree = "<group>";
-		};
-		8F911F521EF8D5B000A741BF /* BleManager */ = {
-			isa = PBXGroup;
-			children = (
-				8F911F531EF8D5B000A741BF /* BlueToothManager.h */,
-				8F911F541EF8D5B000A741BF /* BlueToothManager.m */,
-			);
-			path = BleManager;
 			sourceTree = "<group>";
 		};
 		8F911F551EF8D5B000A741BF /* DatabaseManager */ = {
@@ -300,6 +316,54 @@
 			path = StringRelatedManager;
 			sourceTree = "<group>";
 		};
+		8F9DB9C61F0B6E3A00306F53 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				8F9DB9DB1F0B84C400306F53 /* save.png */,
+				8F9DB9D71F0B847700306F53 /* check.png */,
+				8F9DB9D81F0B847700306F53 /* uncheck.png */,
+				8F9DB9C71F0B6E6F00306F53 /* LED.png */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
+		8F9DB9CE1F0B7E0B00306F53 /* GlobalViews */ = {
+			isa = PBXGroup;
+			children = (
+				8F9DB9DD1F0B8A7500306F53 /* DeviceViews */,
+				8F9DB9CF1F0B7E0B00306F53 /* ScanViews */,
+			);
+			path = GlobalViews;
+			sourceTree = "<group>";
+		};
+		8F9DB9CF1F0B7E0B00306F53 /* ScanViews */ = {
+			isa = PBXGroup;
+			children = (
+				8F9DB9D01F0B7E0B00306F53 /* DeviceScanCell.h */,
+				8F9DB9D11F0B7E0B00306F53 /* DeviceScanCell.m */,
+			);
+			path = ScanViews;
+			sourceTree = "<group>";
+		};
+		8F9DB9D31F0B7F3000306F53 /* BleManager */ = {
+			isa = PBXGroup;
+			children = (
+				8F9DB9D41F0B7F3000306F53 /* BlueToothManager.h */,
+				8F9DB9D51F0B7F3000306F53 /* BlueToothManager.m */,
+			);
+			path = BleManager;
+			sourceTree = "<group>";
+		};
+		8F9DB9DD1F0B8A7500306F53 /* DeviceViews */ = {
+			isa = PBXGroup;
+			children = (
+				8F9DB9E31F0B8F5800306F53 /* DeviceTableViewCell.h */,
+				8F9DB9E41F0B8F5800306F53 /* DeviceTableViewCell.m */,
+				8F9DB9E51F0B8F5800306F53 /* DeviceTableViewCell.xib */,
+			);
+			path = DeviceViews;
+			sourceTree = "<group>";
+		};
 		8F9F506D1EE55EF600CCDF62 /* BaseClass */ = {
 			isa = PBXGroup;
 			children = (
@@ -312,6 +376,7 @@
 		8F9F506E1EE55EF600CCDF62 /* CodeClass */ = {
 			isa = PBXGroup;
 			children = (
+				8F9DB9CE1F0B7E0B00306F53 /* GlobalViews */,
 				8F9F50731EE55F7500CCDF62 /* ScanDevice */,
 				8F9F506F1EE55F1200CCDF62 /* Device */,
 			);
@@ -364,6 +429,9 @@
 		8F9F50741EE55F7500CCDF62 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				8F9DB9C91F0B7AC500306F53 /* ScanViewController.h */,
+				8F9DB9CA1F0B7AC500306F53 /* ScanViewController.m */,
+				8F9DB9CB1F0B7AC500306F53 /* ScanViewController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -512,8 +580,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8F9DB9C81F0B6E6F00306F53 /* LED.png in Resources */,
+				8F9DB9D91F0B847700306F53 /* check.png in Resources */,
 				8F86A8171ED2CD5B004B5632 /* LaunchScreen.storyboard in Resources */,
+				8F9DB9E71F0B8F5800306F53 /* DeviceTableViewCell.xib in Resources */,
 				8F86A8141ED2CD5B004B5632 /* Assets.xcassets in Resources */,
+				8F9DB9CD1F0B7AC500306F53 /* ScanViewController.xib in Resources */,
+				8F9DB9E91F0BA6E800306F53 /* Main.storyboard in Resources */,
+				8F9DB9DC1F0B84C400306F53 /* save.png in Resources */,
+				8F9DB9DA1F0B847700306F53 /* uncheck.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -664,14 +739,17 @@
 				8F911F6F1EF8D5B100A741BF /* DeviceModel.m in Sources */,
 				8F9F50791EE55FB400CCDF62 /* DeviceViewController.m in Sources */,
 				8F911F6B1EF8D5B100A741BF /* DatabaseManager.m in Sources */,
+				8F9DB9E61F0B8F5800306F53 /* DeviceTableViewCell.m in Sources */,
 				8F911F711EF8D5B100A741BF /* ECOPlantParameterModel.m in Sources */,
 				8F911F721EF8D5B100A741BF /* StringRelatedManager.m in Sources */,
 				8F9F507C1EE55FE400CCDF62 /* BaseViewController.m in Sources */,
 				8F911F6D1EF8D5B100A741BF /* FGLanguageTool.m in Sources */,
 				8F86A80C1ED2CD5B004B5632 /* AppDelegate.m in Sources */,
-				8F911F6A1EF8D5B100A741BF /* BlueToothManager.m in Sources */,
 				8F86A8091ED2CD5B004B5632 /* main.m in Sources */,
 				8F911F6C1EF8D5B100A741BF /* DeviceDataType.m in Sources */,
+				8F9DB9D61F0B7F3000306F53 /* BlueToothManager.m in Sources */,
+				8F9DB9CC1F0B7AC500306F53 /* ScanViewController.m in Sources */,
+				8F9DB9D21F0B7E0B00306F53 /* DeviceScanCell.m in Sources */,
 				8F911F6E1EF8D5B100A741BF /* DeviceGroupModel.m in Sources */,
 				8F911F701EF8D5B100A741BF /* DeviceParameterModel.m in Sources */,
 			);

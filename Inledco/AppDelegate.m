@@ -18,12 +18,19 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-    
-    DeviceViewController *deviceViewController = [[DeviceViewController alloc] init];
-    
-    self.window.rootViewController = deviceViewController;
-    [self.window makeKeyAndVisible];
+//    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+//    
+//    // 设备列表视图控制器
+//    DeviceViewController *deviceViewController = [[DeviceViewController alloc] init];
+//    
+//    // 使用NavigationController作为根视图
+//    UINavigationController *rootNavigationController = [[UINavigationController alloc] initWithRootViewController:deviceViewController];
+//    
+//    // 设置窗口根视图控制器
+//    self.window.rootViewController = rootNavigationController;
+//    
+//    // 使获取到的窗口成为主窗口自并可见
+//    [self.window makeKeyAndVisible];
     
     return YES;
 }

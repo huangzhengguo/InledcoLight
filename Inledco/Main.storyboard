@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="oBL-9H-jWZ">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Device View Controller-->
+        <scene sceneID="Ms7-Wx-lNT">
+            <objects>
+                <viewController id="8P0-KW-iBe" customClass="DeviceViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="xgz-Ha-vca"/>
+                        <viewControllerLayoutGuide type="bottom" id="1GC-eD-WYS"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="VxO-Tr-zI4">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="I2a-8c-ocV">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="I2a-8c-ocV" secondAttribute="trailing" id="73k-Nb-Dkp"/>
+                            <constraint firstItem="1GC-eD-WYS" firstAttribute="top" secondItem="I2a-8c-ocV" secondAttribute="bottom" id="DEn-ks-0a6"/>
+                            <constraint firstItem="I2a-8c-ocV" firstAttribute="top" secondItem="VxO-Tr-zI4" secondAttribute="top" id="kx8-YI-1zg"/>
+                            <constraint firstItem="I2a-8c-ocV" firstAttribute="leading" secondItem="VxO-Tr-zI4" secondAttribute="leading" id="q8f-NJ-KfL"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="pmO-MO-E8E"/>
+                    <connections>
+                        <outlet property="tableView" destination="I2a-8c-ocV" id="SpK-go-zu2"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gSM-sM-Nye" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="141.59999999999999" y="-178.56071964017991"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="iEI-AP-RHF">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="oBL-9H-jWZ" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ODC-hP-USd">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="8P0-KW-iBe" kind="relationship" relationship="rootViewController" id="ecr-A5-XM4"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LPF-HB-NHc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-514.39999999999998" y="-178.56071964017991"/>
+        </scene>
+    </scenes>
+</document>

@@ -34,7 +34,9 @@
         // 初始化锁
         _lock = [[NSLock alloc] init];
         
-        // 初始化表
+        // 创建品牌表
+        
+        
         // 创建分组表
         [self createTableWithTableName:DEVICE_GROUP_TABLE ColumnArray:@[DEVICE_GROUP_TABLE,DEVICE_GROUP_NAME,DEVICE_GROUP_FREE_ONE,DEVICE_GROUP_FREE_TWO,DEVICE_GROUP_FREE_THREE]];
         
