@@ -17,7 +17,7 @@
 #define KMYLOG(...) NSLog(__VA_ARGS__)
 
 // 默认分组名称
-#define DEFAULT_GROUPNAME @"A1"
+#define DEFAULT_GROUPNAME @"Default"
 
 // 需要创建的数据库表
 // 分组信息表
@@ -37,8 +37,6 @@
 // 配置信息表
 #define DEVICE_CONFIGURATION_TABLE @"DEVICE_CONFIGURATION_TABLE"
 #define DEVICE_CONFIGURATION_DEVICENAME @"DEVICE_CONFIGURATION_DEVICENAME"
-
-// 定义设备编码
 
 // 定义四路五路标题数组和颜色数组
 // 四路

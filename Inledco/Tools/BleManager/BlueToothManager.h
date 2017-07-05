@@ -76,6 +76,46 @@ typedef void(^passStringBlock)(NSString *);
  */
 - (void)disConnectToDeviceWithUUID:(NSString *)UUID;
 
+/*
+ * Hagen App使用的解析方法
+ * @param receiveData 从设备接收到的数据
+ * @param deviceInfoModel 设备模型
+ */
+- (void)parseDataFromReceiveData:(NSString *)receiveData deviceInfoModel:(DeviceParameterModel *)deviceInfoModel;
+
+/*
+ * ECO植物灯App使用的解析方法
+ * @param receiveData 设备返回的数据
+ * @param deviceInfoModel 设备模型
+ */
+- (void)parseECOPlantDataFromReceiveData:(NSString *)receiveData deviceInfoModel:(ECOPlantParameterModel *)deviceInfoModel;
+
+/*
+ * 发送命令
+ * @param device 设备对象
+ * @param commandStr 命令字符串
+ * @param commandType 命令类型
+ * @param isXOR 标记命令是否包含校验码:YES 带校验码 NO 不带校验码
+ */
+- (void)sendCommandWithUUID:(NSString *)uuid commandStr:(NSString *)commandStr commandType:(SendCommandType)commandType isXOR:(BOOL)isXOR;
+
+// 常用命令封装
+- (void)sendPowerOnCommand:(NSString *)uuidString;
+- (void)sendPowerOffCommand:(NSString *)uuidString;
+- (void)sendManualModeCommand:(NSString *)uuidString;
+- (void)sendAutoModeCommand:(NSString *)uuidString;
+- (void)sendReadTimeCommand:(NSString *)uuidString;
+- (void)sendFindDeviceCommand:(NSString *)uuidString;
+- (void)sendOTACommand:(NSString *)uuidString;
+
+// OTA模式下命令发送
+- (void)sendReadBLInfoCommand:(NSString *)uuidString;    // 读取蓝牙信息
+- (void)sendErasureDeviceCommand:(NSString *)uuidString commandStr:(NSString *)commandStr; // 擦除闪存
+- (void)sendWriteDeviceCommand:(NSString *)uuidString commandStr:(NSString *)commandStr;   // 写入闪存
+// - (void)sendVerifyDeviceCommand:(NSString *)uuidString;  // 校验命令
+- (void)sendRestartDeviceCommand:(NSString *)uuidString; // 重启命令
+
+#pragma mark --- 所有命令回调
 // 开始扫面设备回调
 @property(nonatomic, copy) scanBlock scanDeviceBlock;
 // 停止扫描设备回调
@@ -86,33 +126,17 @@ typedef void(^passStringBlock)(NSString *);
 @property(nonatomic, copy) noneParameterBlock connectDeviceFailedBlock;
 // 断开连接回调
 @property(nonatomic, copy) noneParameterBlock disConnectDeviceBlock;
+// OTA命令返回数据回调
+@property(nonatomic, copy) passStringBlock completeOTABlock;
+// 获取蓝牙版本信息回调
+@property(nonatomic, copy) passStringBlock queryBLEInfoBlock;
+// 处理擦除闪存回调
+@property(nonatomic, copy) passStringBlock erasureMemoryBlock;
+// 处理写入闪存回调
+@property(nonatomic, copy) passStringBlock writeMemoryBlock;
+// 处理重启回调
+@property(nonatomic, copy) passStringBlock restartDeviceBlock;
 
-/*
- * Hagen App使用的解析方法
- * @param receiveData 从设备接收到的数据
- * @param deviceInfoModel 设备模型
- */
-- (void)parseDataFromReceiveData:(NSString *)receiveData deviceInfoModel:(DeviceParameterModel *)deviceInfoModel;
-
-/*
- * ECO植物灯App使用的解析方法
- */
-- (void)parseECOPlantDataFromReceiveData:(NSString *)receiveData deviceInfoModel:(ECOPlantParameterModel *)deviceInfoModel;
-
-// 上次发送命令的时间
-@property (nonatomic, assign) UInt64 lastDimmSendTime;
-- (void)sendCommandWithUUID:(NSString *)uuidString interval:(long)interval channelNum:(NSInteger)channelNum colorIndex:(NSInteger)colorIndex colorValue:(float)colorValue;
-- (void)sendCommandWithUUIDString:(NSString *)uuidString commandStr:(NSString *)commandStr;
-- (void)sendCommandWithDevice:(CBPeripheral *)device commandStr:(NSString *)commandStr;
-
-// 常用命令封装
-- (void)sendPowerOnCommand:(NSString *)uuidString;
-- (void)sendPowerOffCommand:(NSString *)uuidString;
-- (void)sendManualModeCommand:(NSString *)uuidString;
-- (void)sendAutoModeCommand:(NSString *)uuidString;
-- (void)sendReadTimeCommand:(NSString *)uuidString;
-- (void)sendFindDeviceCommand:(NSString *)uuidString;
-- (void)sendOTACommand:(NSString *)uuidString;
 @end
 
 

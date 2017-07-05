@@ -36,6 +36,8 @@
 @property(nonatomic, strong) NSString *receivedData;
 // 发送命令类型
 @property(nonatomic, assign) SendCommandType currentCommandType;
+// OTA返回数据长度记录
+@property(nonatomic, assign) NSInteger OTADataLength;
 
 @end
 
@@ -62,10 +64,10 @@
         // 初始化属性
         blueToothManager = [[BlueToothManager alloc] init];
         blueToothManager.isReceiveAllData = NO;
+        blueToothManager.OTADataLength = 0;
         blueToothManager.connectCount = 0;
         blueToothManager.currentCommandType = OTHER_COMMAND;
         blueToothManager.receivedData = @"";
-        blueToothManager.lastDimmSendTime = [NSDate date].timeIntervalSince1970 * 1000;
         blueToothManager.bleManager = [BLEManager defaultManager];
         blueToothManager.bleManager.delegate = blueToothManager;
         blueToothManager.databaseManager = [DatabaseManager defaultDatabaseManager];
@@ -239,12 +241,20 @@
 
 #pragma mark --- 接收到设备数据
 - (void)receiveDeviceDataSuccess_1:(NSData *)data device:(CBPeripheral *)device{
+    // 处理OTA部分
+    if (self.currentCommandType == OTA_COMMAND || self.currentCommandType == READBLEINFOR_COMMAND || self.currentCommandType == ERASURE_COMMAND || self.currentCommandType == WRITE_COMMAND || self.currentCommandType == RESTART_COMMAND){
+        [self processOTAReceiveData:data commandType:self.currentCommandType];
+        
+        self.receivedData = @"";
+        return;
+    }
     /*
      * 此处判断数据是否已经接收完毕；如果接收完毕则不再接收数据；防止同一类型的命令多次接收数据
      */
     if (self.isReceiveAllData == YES){
         return;
     }
+    
     // 接收完数据之后，取消正在连接设备的提示
     self.receivedData = [self.receivedData stringByAppendingString:[StringRelatedManager hexToStringWithData:data]];
     if ([[StringRelatedManager calculateXORWithString:[self.receivedData substringToIndex:self.receivedData.length-2]] isEqualToString:[self.receivedData substringFromIndex:self.receivedData.length-2]]){
@@ -273,6 +283,58 @@
     }
 }
 
+#pragma mark --- OTA功能部分数据解析
+- (void)processOTAReceiveData:(NSData *)data commandType:(SendCommandType)commandType{
+    // 获取数据长度数值
+    if (self.receivedData.length == 0 && [StringRelatedManager hexToStringWithData:data].length > 4){
+        self.OTADataLength = strtol([[[StringRelatedManager hexToStringWithData:data] substringWithRange:NSMakeRange(2, 2)] UTF8String], 0, 16);
+    }
+    
+    self.receivedData = [self.receivedData stringByAppendingString:[StringRelatedManager hexToStringWithData:data]];
+    
+    switch (self.currentCommandType) {
+        case OTA_COMMAND:
+        {
+            // 处理OTA升级命令
+            if (self.completeOTABlock && ([self.receivedData isEqualToString:@"6800000068"] || [self.receivedData isEqualToString:@"6801000001"])){
+                self.completeOTABlock(self.receivedData);
+                self.receivedData = @"";
+            }
+        }
+            break;
+        case READBLEINFOR_COMMAND:{
+            // 处理获取蓝牙信息命令
+            if (self.queryBLEInfoBlock && self.OTADataLength == (self.receivedData.length - 8) / 2){
+                self.queryBLEInfoBlock(self.receivedData);
+                self.receivedData = @"";
+            }
+        }
+            break;
+        case ERASURE_COMMAND:{
+            // 处理擦除闪存命令
+            if (self.erasureMemoryBlock && self.OTADataLength == (self.receivedData.length - 8) / 2){
+                self.erasureMemoryBlock(self.receivedData);
+            }
+        }
+            break;
+        case WRITE_COMMAND:{
+            if (self.writeMemoryBlock && self.OTADataLength == (self.receivedData.length - 8) / 2){
+                self.writeMemoryBlock(self.receivedData);
+            }
+        }
+            break;
+        case RESTART_COMMAND:{
+            if (self.restartDeviceBlock && self.OTADataLength == (self.receivedData.length - 8) / 2){
+                self.restartDeviceBlock(self.receivedData);
+            }
+        }
+            break;
+        default:
+            break;
+    }
+}
+
+
 /*
  * 发送命令方法
  * 0.发送命令，不包含校验码
@@ -285,61 +347,43 @@
  * 7.发送查找设备命令
  * 8.发送OTA升级命令
  */
-#pragma mark --- 0.间隔一段时间发送命令
-- (void)sendCommandWithUUID:(NSString *)uuidString interval:(long)interval channelNum:(NSInteger)channelNum colorIndex:(NSInteger)colorIndex colorValue:(float)colorValue{
-    // 如果两次发送命令的时间间隔小于50毫秒，则直接返回
-    if ([NSDate date].timeIntervalSince1970 * 1000 - self.lastDimmSendTime < interval){
-        return;
-    }
-    
-    int colorIntValue = floor(colorValue);
-    NSString *colorStr = [NSString stringWithFormat:@"%04x",colorIntValue];
-    NSMutableString *commandStr = [@"6804" mutableCopy];
-    for (int i=0;i<channelNum;i++){
-        [commandStr appendString:@"FFFF"];
-    }
-    
-    [commandStr replaceCharactersInRange:NSMakeRange(4+colorIndex*4, 4) withString:colorStr];
-    
-    [self sendCommandWithUUIDString:uuidString commandStr:commandStr];
-    
-    self.lastDimmSendTime = [NSDate date].timeIntervalSince1970 * 1000;
-}
 
-#pragma mark --- 0.发送不带校验码的命令，可以发送任意长度的命令
-- (void)sendCommandWithUUIDString:(NSString *)uuidString commandStr:(NSString *)commandStr{
-    CBPeripheral *device = [self.bleManager getDeviceByUUID:uuidString];
-    
-    [self sendCommandWithDevice:device commandStr:commandStr];
-}
-#pragma mark --- 0.发送不带校验码的命令，可以发送任意长度的命令
-- (void)sendCommandWithDevice:(CBPeripheral *)device commandStr:(NSString *)commandStr{
+#pragma mark --- 0.发送命令
+- (void)sendCommandWithUUID:(NSString *)uuid commandStr:(NSString *)commandStr commandType:(SendCommandType)commandType isXOR:(BOOL)isXOR{
+    self.currentCommandType = commandType;
     self.isReceiveAllData = NO;
+    CBPeripheral *device = [self.bleManager getDeviceByUUID:uuid];
     KMYLOG(@"发送命令=%@",commandStr);
-    //计算校验码
+    // 1.计算校验码
     NSString *xorStr = [StringRelatedManager calculateXORWithString:commandStr];
     if (xorStr.length == 1){
         
         xorStr = [NSString stringWithFormat:@"0%@",xorStr];
     }
     
-    // 带有校验码的命令
+    // 2.如果不带校验码则设置xorStr为空
+    if (isXOR == NO){
+        xorStr = @"";
+    }
+    
+    // 3.带有校验码的命令
     NSString *commandStrXor = [NSString stringWithFormat:@"%@%@",commandStr,xorStr];
-    if (commandStrXor.length <= 34){
+    if (commandStrXor.length <= 30){
         [self.bleManager sendDataToDevice1:commandStrXor device:device];
         
         return;
     }
     
-    // 发送长度大于17字节的命令
+    // 3.发送长度大于15字节的命令，留一定空间
     NSString *subLastCommandStr = commandStrXor;
-    while (subLastCommandStr.length > 34) {
-        NSString *subCommandStr = [subLastCommandStr substringToIndex:34];
+    while (subLastCommandStr.length > 30) {
+        NSString *subCommandStr = [subLastCommandStr substringToIndex:30];
         [self.bleManager sendDataToDevice1:subCommandStr device:device];
         
-        subLastCommandStr = [subLastCommandStr substringFromIndex:34];
+        subLastCommandStr = [subLastCommandStr substringFromIndex:30];
     }
     
+    // 4.发送命令到设备
     [self.bleManager sendDataToDevice1:subLastCommandStr device:device];
 }
 
@@ -371,59 +415,76 @@
 
 #pragma mark --- 2.发送打开灯光命令
 - (void)sendPowerOnCommand:(NSString *)uuidString{
-    CBPeripheral *device = [self.bleManager getDeviceByUUID:uuidString];
-    self.currentCommandType = POWERON_COMMAND;
-    [self sendCommandWithDevice:device commandStr:@"680301"];
+    [self sendCommandWithUUID:uuidString commandStr:@"680301" commandType:POWERON_COMMAND isXOR:YES];
 }
 
 #pragma mark --- 3.发送关闭灯光命令
 - (void)sendPowerOffCommand:(NSString *)uuidString{
-    CBPeripheral *device = [self.bleManager getDeviceByUUID:uuidString];
-    self.currentCommandType = POWEROFF_COMMAND;
-    [self sendCommandWithDevice:device commandStr:@"680300"];
+    [self sendCommandWithUUID:uuidString commandStr:@"680300" commandType:POWEROFF_COMMAND isXOR:YES];
 }
 
 #pragma mark --- 4.发送手动模式命令
 - (void)sendManualModeCommand:(NSString *)uuidString{
-    CBPeripheral *device = [self.bleManager getDeviceByUUID:uuidString];
-    self.currentCommandType = MANUALMODE_COMMAND;
-    [self sendCommandWithDevice:device commandStr:@"680200"];
+    [self sendCommandWithUUID:uuidString commandStr:@"680200" commandType:MANUALMODE_COMMAND isXOR:YES];
 }
 
 #pragma mark --- 5.发送自动模式命令
 - (void)sendAutoModeCommand:(NSString *)uuidString{
-    CBPeripheral *device = [self.bleManager getDeviceByUUID:uuidString];
-    self.currentCommandType = AUTOMODE_COMMAND;
-    [self sendCommandWithDevice:device commandStr:@"680201"];
+    [self sendCommandWithUUID:uuidString commandStr:@"680201" commandType:AUTOMODE_COMMAND isXOR:YES];
 }
 
 #pragma mark --- 6.发送读取时间命令
 - (void)sendReadTimeCommand:(NSString *)uuidString{
-    CBPeripheral *device = [self.bleManager getDeviceByUUID:uuidString];
-    self.currentCommandType = READTIME_COMMAND;
-    [self sendCommandWithDevice:device commandStr:@"680D"];
+    [self sendCommandWithUUID:uuidString commandStr:@"680D" commandType:READTIME_COMMAND isXOR:YES];
 }
 
 #pragma mark --- 7.发送查找设备命令
 - (void)sendFindDeviceCommand:(NSString *)uuidString{
-    CBPeripheral *device = [self.bleManager getDeviceByUUID:uuidString];
-    self.currentCommandType = FINDDEVICE_COMMAND;
-    [self sendCommandWithDevice:device commandStr:@"680F"];
+    [self sendCommandWithUUID:uuidString commandStr:@"680F" commandType:FINDDEVICE_COMMAND isXOR:YES];
 }
 
 #pragma mark --- 8.发送OTA升级命令
 - (void)sendOTACommand:(NSString *)uuidString{
-    CBPeripheral *device = [self.bleManager getDeviceByUUID:uuidString];
-    self.currentCommandType = OTA_COMMAND;
-    [self sendCommandWithDevice:device commandStr:@"68000000"];
+    [self sendCommandWithUUID:uuidString commandStr:@"68000000" commandType:OTA_COMMAND isXOR:YES];
+}
+
+/* Bootloader下命令发送
+ * 1.发送获取蓝牙信息命令
+ * 2.发送擦除内存块命令
+ * 3.发送写入闪存命令
+ * 4.发送重启命令
+ */
+#pragma mark --- 1.获取蓝牙版本等信息
+- (void)sendReadBLInfoCommand:(NSString *)uuidString{
+    self.OTADataLength = 0;
+    [self sendCommandWithUUID:uuidString commandStr:@"00000000" commandType:READBLEINFOR_COMMAND isXOR:NO];
+}
+
+#pragma mark --- 2.发送擦除闪存命令
+- (void)sendErasureDeviceCommand:(NSString *)uuidString commandStr:(NSString *)commandStr{
+    self.OTADataLength = 0;
+    [self sendCommandWithUUID:uuidString commandStr:commandStr commandType:ERASURE_COMMAND isXOR:NO];
+}
+
+#pragma mark --- 3.发送写入闪存命令
+- (void)sendWriteDeviceCommand:(NSString *)uuidString commandStr:(NSString *)commandStr{
+    self.OTADataLength = 0;
+    [self sendCommandWithUUID:uuidString commandStr:commandStr commandType:WRITE_COMMAND isXOR:NO];
+}
+
+#pragma mark -- 4.重启命令
+- (void)sendRestartDeviceCommand:(NSString *)uuidString{
+    self.OTADataLength = 0;
+    [self sendCommandWithUUID:uuidString commandStr:@"0A000000" commandType:RESTART_COMMAND isXOR:NO];
 }
 
 /*
  * 解析接收数据方法：对不同的灯具，由于协议的不同，所以解析方法也不相同
- * 1.读取设备信息
+ * 1.Hagen App模型解析方法
+ * 2.ECO Plant模型解析方法
  */
 
-#pragma mark --- Hagen App 使用的解析方法
+#pragma mark --- 1.Hagen App 使用的解析方法
 - (void)parseDataFromReceiveData:(NSString *)receiveData deviceInfoModel:(DeviceParameterModel *)deviceInfoModel{
     // 定义游标
     NSInteger countIndex = 0;
@@ -500,7 +561,7 @@
     }
 }
 
-#pragma mark --- ECO Plant解析数据方法
+#pragma mark --- 2.ECO Plant解析数据方法
 - (void)parseECOPlantDataFromReceiveData:(NSString *)receiveData deviceInfoModel:(ECOPlantParameterModel *)deviceInfoModel{
     // 定义游标
     NSInteger countIndex = 0;
@@ -548,35 +609,3 @@
 }
 
 @end
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
