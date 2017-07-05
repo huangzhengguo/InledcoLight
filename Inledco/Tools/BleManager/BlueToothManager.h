@@ -12,8 +12,6 @@
 #import "DeviceParameterModel.h"
 #import "ECOPlantParameterModel.h"
 
-// 定义命令码
-
 // 设备运行模式
 typedef NS_ENUM(NSInteger, DeviceRunMode) {
     MANUAL_MODE = 0,
@@ -32,6 +30,12 @@ typedef NS_ENUM(NSInteger, SendCommandType) {
     FINDDEVICE_COMMAND,          // 查找设备命令
     OTA_COMMAND,                 // OTA升级命令
     READDEVICEINFO_COMMAND,      // 读取设备
+    
+    // OTA下的命令
+    READBLEINFOR_COMMAND,        // 获取蓝牙版本等信息
+    ERASURE_COMMAND,             // 擦除闪存命令
+    WRITE_COMMAND,               // 写入闪存命令
+    RESTART_COMMAND,             // 重启命令
     OTHER_COMMAND
 };
 

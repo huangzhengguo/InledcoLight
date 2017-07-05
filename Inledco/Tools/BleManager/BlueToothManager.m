@@ -19,26 +19,21 @@
 
 @interface BlueToothManager()<BLEManagerDelegate>
 
+// 数据库管理对象
 @property(nonatomic, strong) DatabaseManager *databaseManager;
-
+// 蓝牙管理对象
 @property(nonatomic, strong) BLEManager *bleManager;
-
 // 扫描定时器
 @property(nonatomic, strong) NSTimer *scanTimer;
-
 // 连接设备定时器
 @property(nonatomic, strong) NSTimer *connTimer;
 @property(nonatomic, assign) NSInteger connectCount;
-
 // 设备模型数组
 @property(nonatomic, strong) NSMutableArray *deviceModelArray;
-
 // 接收数据完成标记
 @property(nonatomic, assign) BOOL isReceiveAllData;
-
 // 存储接收数据
 @property(nonatomic, strong) NSString *receivedData;
-
 // 发送命令类型
 @property(nonatomic, assign) SendCommandType currentCommandType;
 
@@ -58,6 +53,10 @@
 // 类方法使用+号表示
 +(instancetype)defaultBlueToothManager{
     static BlueToothManager *blueToothManager = nil;
+    if (blueToothManager != nil){
+        // 设置代理，保证代理只在该类中执行
+        blueToothManager.bleManager.delegate = blueToothManager;
+    }
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         // 初始化属性
@@ -136,7 +135,7 @@
             continue;
         }
         
-        // 保存设备
+        // 构建设备模型
         DeviceModel *deviceModel = [[DeviceModel alloc] init];
         
         deviceModel.deviceGroupName = @"Default";
@@ -170,6 +169,8 @@
 
 #pragma mark --- 连接设备
 - (void)connectToDeviceWithUUID:(NSString *)UUID{
+    // 初始化连接次数
+    self.connectCount = 0;
     // 初始化连接设备的定时器
     self.connTimer = [NSTimer scheduledTimerWithTimeInterval:CONNECTIONINTERVAL target:self selector:@selector(sendConnectCommandToDevice:) userInfo:UUID repeats:YES];
     // 连接到设备
@@ -216,7 +217,6 @@
 #pragma mark --- 连接回调
 - (void)connectDeviceSuccess:(CBPeripheral *)device error:(NSError *)error{
     // 清空连接有关的信息
-    self.connectCount = 0;
     if (self.connTimer != nil){
         [self.connTimer invalidate];
         self.connTimer = nil;

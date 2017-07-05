@@ -42,6 +42,7 @@
     [self setConstraints];
     
     __weak typeof(self) weakself = self;
+    // 扫描回调
     self.blueToothManager.scanDeviceBlock = ^(NSArray *deviceModelArray){
         // 赋值数据源
         weakself.scanDeviceArray = [deviceModelArray mutableCopy];
@@ -49,6 +50,7 @@
         [weakself.tableView reloadData];
     };
     
+    // 停止扫描回调
     self.blueToothManager.stopScanDeviceBlock = ^{
         [weakself.activityIndicatorView stopAnimating];
         weakself.scanBarButtonItem.title = FGGetStringWithKey(@"Scan");
