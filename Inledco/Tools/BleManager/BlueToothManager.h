@@ -21,6 +21,8 @@ typedef NS_ENUM(NSInteger, DeviceRunMode) {
 
 // 指令类型：用于判断当前接收到的数据是由于什么类型的指令引起的
 typedef NS_ENUM(NSInteger, SendCommandType) {
+    SCAN_DEVICE_COMMAND,         // 扫描
+    SCAN_CONNECT_DEVICE_COMMAND, // 扫描设备时连接设备
     TIMESYNCHRONIZATION_COMMAND, // 同步时间命令
     POWERON_COMMAND,             // 打开灯光命令
     POWEROFF_COMMAND,            // 关闭灯光命令
@@ -30,6 +32,7 @@ typedef NS_ENUM(NSInteger, SendCommandType) {
     FINDDEVICE_COMMAND,          // 查找设备命令
     OTA_COMMAND,                 // OTA升级命令
     READDEVICEINFO_COMMAND,      // 读取设备
+    MANUAL_DIMMING_COMMAND,      // 手动调光命令
     
     // OTA下的命令
     READBLEINFOR_COMMAND,        // 获取蓝牙版本等信息
@@ -89,6 +92,16 @@ typedef void(^passStringBlock)(NSString *);
  * @param deviceInfoModel 设备模型
  */
 - (void)parseECOPlantDataFromReceiveData:(NSString *)receiveData deviceInfoModel:(ECOPlantParameterModel *)deviceInfoModel;
+
+/*
+ * 发送调光命令
+ * @param uuidString 设备id
+ * @param interval 发送命令时间间隔
+ * @param channelNum 设备路数
+ * @param colorIndex 颜色索引值
+ * @param colorValue 颜色值
+ */
+- (void)sendCommandWithUUID:(NSString *)uuidString interval:(long)interval channelNum:(NSInteger)channelNum colorIndex:(NSInteger)colorIndex colorValue:(float)colorValue;
 
 /*
  * 发送命令

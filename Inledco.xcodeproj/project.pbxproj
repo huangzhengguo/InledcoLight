@@ -8,14 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		59AE5EF8ACE13908FD105563 /* libPods-InledcoTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 588595315B43D0C797274581 /* libPods-InledcoTests.a */; };
+		8F15372C1F79EB6900AF9CB4 /* libBLEManager.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F911F381EF8CAAD00A741BF /* libBLEManager.a */; };
 		8F4137E51EE0F14100D3F362 /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F4137E41EE0F14100D3F362 /* libsqlite3.0.tbd */; };
+		8F7D8AEC1F2A030300E69D39 /* DeviceCodeInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F7D8AEB1F2A030300E69D39 /* DeviceCodeInfo.m */; };
 		8F86A8091ED2CD5B004B5632 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F86A8081ED2CD5B004B5632 /* main.m */; };
 		8F86A80C1ED2CD5B004B5632 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F86A80B1ED2CD5B004B5632 /* AppDelegate.m */; };
 		8F86A8141ED2CD5B004B5632 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8F86A8131ED2CD5B004B5632 /* Assets.xcassets */; };
 		8F86A8171ED2CD5B004B5632 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8F86A8151ED2CD5B004B5632 /* LaunchScreen.storyboard */; };
 		8F86A8221ED2CD5B004B5632 /* InledcoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F86A8211ED2CD5B004B5632 /* InledcoTests.m */; };
 		8F86A82D1ED2CD5B004B5632 /* InledcoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F86A82C1ED2CD5B004B5632 /* InledcoUITests.m */; };
-		8F911F3B1EF8CAAD00A741BF /* libBLEManager.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F911F381EF8CAAD00A741BF /* libBLEManager.a */; };
+		8F8B240B1F132804007F624D /* BrandModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F8B240A1F132804007F624D /* BrandModel.m */; };
 		8F911F6B1EF8D5B100A741BF /* DatabaseManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F911F571EF8D5B000A741BF /* DatabaseManager.m */; };
 		8F911F6C1EF8D5B100A741BF /* DeviceDataType.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F911F5A1EF8D5B000A741BF /* DeviceDataType.m */; };
 		8F911F6D1EF8D5B100A741BF /* FGLanguageTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F911F5D1EF8D5B000A741BF /* FGLanguageTool.m */; };
@@ -66,6 +68,8 @@
 		80994BA060B6A07A2A63351F /* Pods-InledcoUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InledcoUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-InledcoUITests/Pods-InledcoUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		8F4137E21EE0F12B00D3F362 /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
 		8F4137E41EE0F14100D3F362 /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
+		8F7D8AEA1F2A030300E69D39 /* DeviceCodeInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeviceCodeInfo.h; sourceTree = "<group>"; };
+		8F7D8AEB1F2A030300E69D39 /* DeviceCodeInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeviceCodeInfo.m; sourceTree = "<group>"; };
 		8F86A8041ED2CD5B004B5632 /* Inledco.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Inledco.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F86A8081ED2CD5B004B5632 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		8F86A80A1ED2CD5B004B5632 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -79,6 +83,8 @@
 		8F86A8281ED2CD5B004B5632 /* InledcoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InledcoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F86A82C1ED2CD5B004B5632 /* InledcoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InledcoUITests.m; sourceTree = "<group>"; };
 		8F86A82E1ED2CD5B004B5632 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8F8B24091F132804007F624D /* BrandModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BrandModel.h; sourceTree = "<group>"; };
+		8F8B240A1F132804007F624D /* BrandModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BrandModel.m; sourceTree = "<group>"; };
 		8F911F351EF8CAAD00A741BF /* BLEManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLEManager.h; sourceTree = "<group>"; };
 		8F911F361EF8CAAD00A741BF /* DeviceInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeviceInfo.h; sourceTree = "<group>"; };
 		8F911F371EF8CAAD00A741BF /* DeviceInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeviceInfo.m; sourceTree = "<group>"; };
@@ -133,10 +139,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8F15372C1F79EB6900AF9CB4 /* libBLEManager.a in Frameworks */,
 				8F911F751EF8F0B000A741BF /* CoreBluetooth.framework in Frameworks */,
 				8F4137E51EE0F14100D3F362 /* libsqlite3.0.tbd in Frameworks */,
 				DB01E11411C1E758386AD9CE /* libPods-Inledco.a in Frameworks */,
-				8F911F3B1EF8CAAD00A741BF /* libBLEManager.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -279,6 +285,8 @@
 			children = (
 				8F911F591EF8D5B000A741BF /* DeviceDataType.h */,
 				8F911F5A1EF8D5B000A741BF /* DeviceDataType.m */,
+				8F7D8AEA1F2A030300E69D39 /* DeviceCodeInfo.h */,
+				8F7D8AEB1F2A030300E69D39 /* DeviceCodeInfo.m */,
 			);
 			path = DeviceDataType;
 			sourceTree = "<group>";
@@ -303,6 +311,8 @@
 				8F911F641EF8D5B100A741BF /* DeviceParameterModel.m */,
 				8F911F651EF8D5B100A741BF /* ECOPlantParameterModel.h */,
 				8F911F661EF8D5B100A741BF /* ECOPlantParameterModel.m */,
+				8F8B24091F132804007F624D /* BrandModel.h */,
+				8F8B240A1F132804007F624D /* BrandModel.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -738,6 +748,7 @@
 			files = (
 				8F911F6F1EF8D5B100A741BF /* DeviceModel.m in Sources */,
 				8F9F50791EE55FB400CCDF62 /* DeviceViewController.m in Sources */,
+				8F8B240B1F132804007F624D /* BrandModel.m in Sources */,
 				8F911F6B1EF8D5B100A741BF /* DatabaseManager.m in Sources */,
 				8F9DB9E61F0B8F5800306F53 /* DeviceTableViewCell.m in Sources */,
 				8F911F711EF8D5B100A741BF /* ECOPlantParameterModel.m in Sources */,
@@ -749,6 +760,7 @@
 				8F911F6C1EF8D5B100A741BF /* DeviceDataType.m in Sources */,
 				8F9DB9D61F0B7F3000306F53 /* BlueToothManager.m in Sources */,
 				8F9DB9CC1F0B7AC500306F53 /* ScanViewController.m in Sources */,
+				8F7D8AEC1F2A030300E69D39 /* DeviceCodeInfo.m in Sources */,
 				8F9DB9D21F0B7E0B00306F53 /* DeviceScanCell.m in Sources */,
 				8F911F6E1EF8D5B100A741BF /* DeviceGroupModel.m in Sources */,
 				8F911F701EF8D5B100A741BF /* DeviceParameterModel.m in Sources */,
@@ -908,6 +920,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.ledinpro.Inledco;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -929,6 +942,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.ledinpro.Inledco;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};

@@ -18,14 +18,15 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    [self prepareData];
+    [self prepareBaseData];
     
+    // 设置背景色
     self.view.backgroundColor = [UIColor whiteColor];
 }
 
 #pragma mark --- 初始化工具对象
-- (void)prepareData{
-    self.blueToothManager = [BlueToothManager defaultBlueToothManager];
+- (void)prepareBaseData{
+    // self.blueToothManager = [BlueToothManager defaultBlueToothManager];
     self.databaseManager = [DatabaseManager defaultDatabaseManager];
 }
 

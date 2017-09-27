@@ -13,6 +13,8 @@
 @interface DeviceViewController ()<UITableViewDelegate,UITableViewDataSource>
 // 列表视图
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+// 品牌数据源
+// 分组数据源
 // 设备数据源
 @property (nonatomic, strong) NSMutableArray *deviceDataArray;
 
@@ -34,6 +36,22 @@
 
     // 设置视图
     [self setViews];
+ 
+}
+
+- (void)viewWillAppear:(BOOL)animated{
+    // 获取数据
+    [self prepareData];
+}
+
+- (void)prepareData{
+    /*
+     * 此处注意，如果父类也有一个方法名称为prepareData,则在父类中调用时会调用子类的同名方法；避免方法重写
+     * 应该首先调用父类的方法
+     */
+    self.deviceDataArray = [self.databaseManager findDataFromTableWithTableName:DEVICE_TABLE groupName:nil];
+    
+    [self.tableView reloadData];
 }
 
 - (void)setViews{

@@ -30,4 +30,6 @@
 // 数据库管理头文件
 #import "DatabaseManager.h"
 
+#import "DeviceCodeInfo.h"
+
 #endif /* PrefixHeader_pch */

@@ -13,11 +13,7 @@
 //单例类实现
 +(instancetype)defaultDeviceDataType;
 
-// 设置类型编码和名称对照
-@property(nonatomic, strong) NSDictionary *deviceCodeNameDic;
-// 设备类型编码和图片对照
-@property(nonatomic, strong) NSDictionary *deviceCodePicDic;
-// 设备类型编码对应路数
-@property(nonatomic, strong) NSDictionary *diviceCodeChannelNumDic;
+@property(nonatomic, strong) NSArray *deviceCodeArray;
+@property(nonatomic, strong) NSMutableDictionary *deviceCodeInfoDic;
 
 @end

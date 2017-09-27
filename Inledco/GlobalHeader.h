@@ -16,8 +16,11 @@
 /* 打印宏 */
 #define KMYLOG(...) NSLog(__VA_ARGS__)
 
+// 默认品牌名称
+#define DEFAULT_BRAND_NAME @"INLEDCO"
+
 // 默认分组名称
-#define DEFAULT_GROUPNAME @"Default"
+#define DEFAULT_GROUPNAME @"DEFAULT"
 
 // 需要创建的数据库表
 // 分组信息表
@@ -37,6 +40,17 @@
 // 配置信息表
 #define DEVICE_CONFIGURATION_TABLE @"DEVICE_CONFIGURATION_TABLE"
 #define DEVICE_CONFIGURATION_DEVICENAME @"DEVICE_CONFIGURATION_DEVICENAME"
+
+// 定义路数宏
+#define ONE_CHANNEL 1
+#define TWO_CHANNEL 2
+#define THREE_CHANNEL 3
+#define FOUR_CHANNEL 4
+#define FIVE_CHANNEL 5
+#define SIX_CHANNEL 6
+
+// 设备编码
+#define CODE_9999 @"9999"
 
 // 定义四路五路标题数组和颜色数组
 // 四路

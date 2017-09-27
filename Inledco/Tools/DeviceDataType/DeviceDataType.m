@@ -8,31 +8,36 @@
 
 #import "DeviceDataType.h"
 
-
-
 @implementation DeviceDataType
+
+- (NSMutableDictionary *)deviceCodeInfoDic{
+    if (_deviceCodeInfoDic == nil){
+        self.deviceCodeInfoDic = [NSMutableDictionary dictionary];
+    }
+    
+    return _deviceCodeInfoDic;
+}
 
 +(instancetype)defaultDeviceDataType{
     static DeviceDataType *deviceDataType = nil;
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        deviceDataType = [[DeviceDataType alloc] init];
-    });
+    deviceDataType = [[DeviceDataType alloc] init];
     
     return deviceDataType;
 }
 
 - (instancetype)init{
     if (self=[super init]){
-        _deviceCodeNameDic = @{
-                               @"9999":@"Plant Light"
-                               };
-        _deviceCodePicDic = @{
-                              @"9999":@"led.png"
-                              };
-        _diviceCodeChannelNumDic = @{
-                                     @"9999":@"3"
-                                     };
+        self.deviceCodeArray = @[CODE_9999];
+        for (NSString *deviceCode in self.deviceCodeArray) {
+            DeviceCodeInfo *deviceCodeInfo = [[DeviceCodeInfo alloc] init];
+            if ([deviceCode isEqualToString:CODE_9999]){
+                deviceCodeInfo.deviceName = @"Plant Light";
+                deviceCodeInfo.pictureName = @"led.png";
+                deviceCodeInfo.channelNumber = 3;
+            }
+            
+            [self.deviceCodeInfoDic setObject:deviceCodeInfo forKey:deviceCode];
+        }
     }
     
     return self;

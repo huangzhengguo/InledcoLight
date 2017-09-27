@@ -8,14 +8,13 @@
 
 #import "DatabaseManager.h"
 
-/* 数据库路径 */
+// 数据路径
 #define DATABASEPATH [[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) firstObject] stringByAppendingPathComponent:@"bleDatabase.sqlite"]
 
 @interface DatabaseManager()
 
 // 数据库锁
 @property(nonatomic, strong) NSLock *lock;
-
 // 数据库指针
 @property(nonatomic, strong) FMDatabase *fmDatabase;
 
@@ -162,9 +161,6 @@
             
             deviceGroupModel = nil;
         }
-        [_lock unlock];
-        
-        return array;
     }else if ([tableName isEqualToString:DEVICE_TABLE]){
         // 解析设备数据
         if (groupName == nil){
@@ -185,12 +181,11 @@
             
             deviceModel = nil;
         }
-        [_lock unlock];
-        return array;
     }else{
-        [_lock unlock];
-        return array;
+
     }
+    [_lock unlock];
+    return array;
 }
 
 @end
